@@ -7,9 +7,13 @@ let two = document.getElementById('js-two');
 let plus = document.getElementById('js-plus');
 let equal = document.getElementById('js-equals')
 
+let firstOperand = null;
+let secondOperand = null;
+
 
 // One Key Functionality
 one.addEventListener('click', function(e) {
+  screen.innerHTML = '';
   let oneNode = document.createTextNode('1');
   screen.appendChild(oneNode);
   
@@ -18,6 +22,7 @@ one.addEventListener('click', function(e) {
 
 // One Key Functionality
 two.addEventListener('click', function(e) {
+  screen.innerHTML = '';
   let twoNode = document.createTextNode('2');
   screen.appendChild(twoNode);
   
@@ -26,13 +31,17 @@ two.addEventListener('click', function(e) {
 
 // Plus key functionality
 plus.addEventListener('click', function(e) {
-  screen.innerHTML;
-  
+  firstOperand = screen.innerHTML;
 });
 
 // Equals sign Functionality
 equal.addEventListener('click', function() {
-  if ()
+  secondOperand = screen.innerHTML;
+  let result = firstOperand + secondOperand;
+  screen.innerHTML = result;
+  
+ 
+  
 
 });
 
@@ -45,5 +54,6 @@ equal.addEventListener('click', function() {
 // keys[1] = document.getElementsByClassName('two')
 // keys[2] = document.getElementsByClassName('plus') 
 // keys[3] = document.getElementsByClassName('equals')               
+
 
 
