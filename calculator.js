@@ -127,11 +127,11 @@ equal.addEventListener("click", function(e) {
 
 });
 
-// Plus Equal sign Functionality
+// Minus Equal sign Functionality
 equal.addEventListener("click", function(e) {
   secondOperand = screen.innerHTML;
-  let minusResult = +firstOperand - +secondOperand;
-     screen.innerHTML = minusResult;
+  let plusResult = +firstOperand - +secondOperand;
+     screen.innerHTML = plusResult;
   
 
 
