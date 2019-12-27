@@ -20,6 +20,11 @@ let decimal = document.getElementById("js-decimal");
 
 let firstOperand = null;
 let secondOperand = null;
+let plusOperand = plus.innerHTML;
+let plusResult = +firstOperand + +secondOperand;
+// third operand for mathmatical operation button
+// let plusOperand = plus.innerHTML;
+// console.log(plus);
 
 let text = screen.innerHTML;
 
@@ -93,54 +98,61 @@ zero.addEventListener("click", function(e) {
   screen.appendChild(zeroNode);
 });
 
-// Plus key functionality
+
 plus.addEventListener("click", function(e) {
   firstOperand = screen.innerHTML;
+
 });
+
+//equal.addEventListener("click", function(e) {
+  //secondOperand = screen.innerHTML;
+  //screen.innerHTML = +firstOperand - +secondOperand;
+//});
+
+
+// Minus key functionality
+//minus.addEventListener("click", function(e) {
+ // firstOperand = screen.innerHTML;
+//});
 
 // Multiply key functionality
-multiply.addEventListener("click", function(e) {
-  firstOperand = screen.innerHTML;
-});
+//multiply.addEventListener("click", function(e) {
+ // firstOperand = screen.innerHTML;
+//});
 
 // Divide key functionality
-divide.addEventListener("click", function(e) {
-  firstOperand = screen.innerHTML;
-});
+//divide.addEventListener("click", function(e) {
+ // firstOperand = screen.innerHTML;
+//});
 
 // Decimal key functionality
-decimal.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let decimalNode = document.createTextNode(".");
-  screen.appendChild(decimalNode);
-});
+//decimal.addEventListener("click", function(e) {
+  //screen.innerHTML = "";
+  //let decimalNode = document.createTextNode(".");
+  ///screen.appendChild(decimalNode);
+//});
 
-// Plus Equal sign Functionality
+// Equal sign Functionality
 equal.addEventListener("click", function(e) {
   secondOperand = screen.innerHTML;
-  let plusResult = +firstOperand + +secondOperand;
-     screen.innerHTML = plusResult;
-  
-
-
-  
-
+  let result = +firstOperand + mathOperand + +secondOperand;
+  screen.innerHTML = result;
 });
-
-// Minus Equal sign Functionality
-equal.addEventListener("click", function(e) {
-  secondOperand = screen.innerHTML;
-  let plusResult = +firstOperand - +secondOperand;
-     screen.innerHTML = plusResult;
   
-
-
-  
-
-});
-
 // Clear button Functionality
 clear.addEventListener("click", function(e) {
   screen.innerHTML = "";
   
 });
+
+//calculation if with function
+
+// function calculateOperand(calculation firstOperand + secondOperand) {
+  // if (plus.screen.innerHTML === "+") return plusResult;
+ 
+ 
+ //   if (minus.screen.innerHTML === "-") return minusResult;
+// }
+
+
+if (plusOperand.value === "+") return 
