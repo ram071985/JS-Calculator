@@ -18,126 +18,143 @@ let equal = document.getElementById("js-equals");
 let clear = document.getElementById("js-ce");
 let decimal = document.getElementById("js-decimal");
 
+// let oneParse = parseFloat('1');
+
+
 let firstOperand = null;
 let secondOperand = null;
-let plusOperand = plus.innerHTML;
-let plusResult = +firstOperand + +secondOperand;
-// third operand for mathmatical operation button
-// let plusOperand = plus.innerHTML;
-// console.log(plus);
-
-let text = screen.innerHTML;
+let mathOperand = null;
 
 // One Key Functionality
 one.addEventListener("click", function(e) {
-  screen.innerHTML = "";
+if (one.textContent === "1") {
   let oneNode = document.createTextNode("1");
   screen.appendChild(oneNode);
+} else if(plus.textContent === "+") {
+  screen.textContent = "";
+  
+}
+  
 });
 
 // Two Key Functionality
 two.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let twoNode = document.createTextNode("2");
-  screen.appendChild(twoNode);
+  if (two.textContent === "2") {
+    let twoNode = document.createTextNode("2");
+    screen.appendChild(twoNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Three Key Functionality
 three.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let threeNode = document.createTextNode("3");
-  screen.appendChild(threeNode);
+  if (three.textContent === "3") {
+    let threeNode = document.createTextNode("3");
+    screen.appendChild(threeNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Four Key Functionality
 four.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let fourNode = document.createTextNode("4");
-  screen.appendChild(fourNode);
+  if (four.textContent === "4") {
+    let fourNode = document.createTextNode("4");
+    screen.appendChild(fourNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Five Key Functionality
 five.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let fiveNode = document.createTextNode("5");
-  screen.appendChild(fiveNode);
+  if (five.textContent === "5") {
+    let fiveNode = document.createTextNode("5");
+    screen.appendChild(fiveNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Six Key Functionality
 six.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let sixNode = document.createTextNode("6");
-  screen.appendChild(sixNode);
+  if (six.textContent === "6") {
+    let sixNode = document.createTextNode("6");
+    screen.appendChild(sixNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Seven Key Functionality
 seven.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let sevenNode = document.createTextNode("7");
-  screen.appendChild(sevenNode);
+  if (seven.textContent === "7") {
+    let sevenNode = document.createTextNode("7");
+    screen.appendChild(sevenNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Eight Key Functionality
 eight.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let eightNode = document.createTextNode("8");
-  screen.appendChild(eightNode);
+  if (eight.textContent === "8") {
+    let eightNode = document.createTextNode("8");
+    screen.appendChild(eightNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Nine Key Functionality
 nine.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let nineNode = document.createTextNode("9");
-  screen.appendChild(nineNode);
+  if (nine.textContent === "9") {
+    let nineNode = document.createTextNode("9");
+    screen.appendChild(nineNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 // Zero Key Functionality
 zero.addEventListener("click", function(e) {
-  screen.innerHTML = "";
-  let zeroNode = document.createTextNode("0");
-  screen.appendChild(zeroNode);
+  if (zero.textContent === "0") {
+    let zeroNode = document.createTextNode("0");
+    screen.appendChild(zeroNode);
+  } else {
+    screen.textContent = "";
+  }
+      
 });
 
 
-plus.addEventListener("click", function(e) {
-  firstOperand = screen.innerHTML;
-
+plus.addEventListener("click", function(e) { 
+ firstOperand = screen.textContent;
+ if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+   screen.textContent = "";
+ }
+console.log(firstOperand);
 });
 
-//equal.addEventListener("click", function(e) {
-  //secondOperand = screen.innerHTML;
-  //screen.innerHTML = +firstOperand - +secondOperand;
-//});
 
-
-// Minus key functionality
-//minus.addEventListener("click", function(e) {
- // firstOperand = screen.innerHTML;
-//});
-
-// Multiply key functionality
-//multiply.addEventListener("click", function(e) {
- // firstOperand = screen.innerHTML;
-//});
-
-// Divide key functionality
-//divide.addEventListener("click", function(e) {
- // firstOperand = screen.innerHTML;
-//});
-
-// Decimal key functionality
-//decimal.addEventListener("click", function(e) {
-  //screen.innerHTML = "";
-  //let decimalNode = document.createTextNode(".");
-  ///screen.appendChild(decimalNode);
-//});
-
-// Equal sign Functionality
 equal.addEventListener("click", function(e) {
   secondOperand = screen.innerHTML;
-  let result = +firstOperand + mathOperand + +secondOperand;
-  screen.innerHTML = result;
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  screen.innerHTML = parseFirstOperand + parseSecondOperand;
 });
+
+
+
   
 // Clear button Functionality
 clear.addEventListener("click", function(e) {
@@ -145,14 +162,3 @@ clear.addEventListener("click", function(e) {
   
 });
 
-//calculation if with function
-
-// function calculateOperand(calculation firstOperand + secondOperand) {
-  // if (plus.screen.innerHTML === "+") return plusResult;
- 
- 
- //   if (minus.screen.innerHTML === "-") return minusResult;
-// }
-
-
-if (plusOperand.value === "+") return 
