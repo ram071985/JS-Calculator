@@ -17,25 +17,30 @@ let plus = document.getElementById("js-plus");
 let equal = document.getElementById("js-equals");
 let clear = document.getElementById("js-ce");
 let decimal = document.getElementById("js-decimal");
+let item = document.getElementsByClassName("item");
 
-// let oneParse = parseFloat('1');
+// let multipleItem = item + plus.textContent + item + plus.textContent;
+// multipleItem = true;
 
-
+let plusEquals = "+";
+let minusEquals = "-";
 let firstOperand = null;
 let secondOperand = null;
 let mathOperand = null;
+let multipleFunction = null;
 
-// One Key Functionality
-one.addEventListener("click", function(e) {
-if (one.textContent === "1") {
-  let oneNode = document.createTextNode("1");
-  screen.appendChild(oneNode);
-} else if(plus.textContent === "+") {
-  screen.textContent = "";
-  
-}
-  
-});
+ //secondOperand?
+  // One Key Functionality
+  one.addEventListener("click", function(e) {
+    mathOperand = "+" + "+";
+    if (screen.textContent === "") {
+      let oneNode = document.createTextNode("1");
+      screen.appendChild(oneNode);
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = screen.textContent;
+    // } else if ()
+    }
+  });
 
 // Two Key Functionality
 two.addEventListener("click", function(e) {
@@ -45,7 +50,6 @@ two.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Three Key Functionality
@@ -56,7 +60,6 @@ three.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Four Key Functionality
@@ -67,7 +70,6 @@ four.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Five Key Functionality
@@ -78,7 +80,6 @@ five.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Six Key Functionality
@@ -89,7 +90,6 @@ six.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Seven Key Functionality
@@ -100,7 +100,6 @@ seven.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Eight Key Functionality
@@ -111,7 +110,6 @@ eight.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Nine Key Functionality
@@ -122,7 +120,6 @@ nine.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
 // Zero Key Functionality
@@ -133,32 +130,73 @@ zero.addEventListener("click", function(e) {
   } else {
     screen.textContent = "";
   }
-      
 });
 
-
-plus.addEventListener("click", function(e) { 
- firstOperand = screen.textContent;
- if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-   screen.textContent = "";
- }
-console.log(firstOperand);
+// Decimal Key Functionality
+decimal.addEventListener("click", function(e) {
+  if (decimal.textContent === ".") {
+    let zeroNode = document.createTextNode(".");
+    screen.appendChild(zeroNode);
+  } else {
+    screen.textContent = "";
+  }
 });
 
+minus.addEventListener("click", function(e) {
+  mathOperand = "-";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
+    screen.textContent = "";
+  }
+});
 
-equal.addEventListener("click", function(e) {
+multiply.addEventListener("click", function(e) {
+  mathOperand = "*";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
+    screen.textContent = "";
+  }
+});
+
+divide.addEventListener("click", function(e) {
+  mathOperand = "/";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
+    screen.textContent = "";
+  }
+});
+
+plus.addEventListener("click", function(e) {
+  mathOperand = "+";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" + "+")) {
+    screen.textContent = "";
+
+  } 
+
+
+
+ equal.addEventListener("click", function(e) {
   secondOperand = screen.innerHTML;
   let parseFirstOperand = parseFloat(firstOperand);
   let parseSecondOperand = parseFloat(secondOperand);
-  screen.innerHTML = parseFirstOperand + parseSecondOperand;
+  if (mathOperand === "+") {
+    screen.textContent = parseFirstOperand + parseSecondOperand;
+  } else if (mathOperand === "-") {
+    screen.textContent = parseFirstOperand - parseSecondOperand;
+  } else if (mathOperand === "*") {
+    screen.textContent = parseFirstOperand * parseSecondOperand;
+  } else if (mathOperand === "/") {
+    screen.textContent = parseFirstOperand / parseSecondOperand;
+  }
+  });
 });
-
-
-
-  
 // Clear button Functionality
 clear.addEventListener("click", function(e) {
   screen.innerHTML = "";
-  
 });
+
+// check out firstOperand and what you can do with it once it is saved in a variable
+// find a way to capture firstOperand globally?
+// make function for multiple functions?  
 
