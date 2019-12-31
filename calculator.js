@@ -30,94 +30,92 @@
   let newNumber = "";
 
   one.addEventListener("click", function(e) {
-    firstOperand = "1";
-    let oneNode = document.createTextNode("1");
     if (screen.textContent === "") {
-      screen.appendChild(oneNode);
-    } else if (screen.textContent === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      screen.textContent = one.textContent;
-    } else if (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      screen.appendChild(oneNode);
-    }
+      screen.textContent = "1";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "1";
+      screen.textContent = secondOperand;
+    } 
   });
 
   two.addEventListener("click", function(e) {
-    let twoNode = document.createTextNode("2");
-    if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      screen.textContent = "" + "2";
+    if (screen.textContent === "") {
+      screen.textContent = "2";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
       secondOperand = "2";
-    }
+      screen.textContent = secondOperand;
+    } 
   });
 
   three.addEventListener("click", function(e) {
-    if (three.textContent === "3") {
-      let threeNode = document.createTextNode("3");
-      screen.appendChild(threeNode);
-    } else {
-      screen.textContent = "";
-    }
+    if (screen.textContent === "") {
+      screen.textContent = "3";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "3";
+      screen.textContent = secondOperand;
+    } 
   });
 
   four.addEventListener("click", function(e) {
-    if (four.textContent === "4") {
-      let fourNode = document.createTextNode("4");
-      screen.appendChild(fourNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "4";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "4";
+      screen.textContent = secondOperand;
     }
   });
 
   five.addEventListener("click", function(e) {
-    if (five.textContent === "5") {
-      let fiveNode = document.createTextNode("5");
-      screen.appendChild(fiveNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "5";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "5";
+      screen.textContent = secondOperand;
     }
   });
 
   six.addEventListener("click", function(e) {
-    if (six.textContent === "6") {
-      let sixNode = document.createTextNode("6");
-      screen.appendChild(sixNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "6";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "6";
+      screen.textContent = secondOperand;
     }
   });
 
   seven.addEventListener("click", function(e) {
-    if (seven.textContent === "7") {
-      let sevenNode = document.createTextNode("7");
-      screen.appendChild(sevenNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "7";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "7";
+      screen.textContent = secondOperand;
     }
   });
 
   eight.addEventListener("click", function(e) {
-    if (eight.textContent === "8") {
-      let eightNode = document.createTextNode("8");
-      screen.appendChild(eightNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "8";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "8";
+      screen.textContent = secondOperand;
     }
   });
 
   nine.addEventListener("click", function(e) {
-    if (nine.textContent === "9") {
-      let nineNode = document.createTextNode("9");
-      screen.appendChild(nineNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "9";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "9";
+      screen.textContent = secondOperand;
     }
   });
 
   zero.addEventListener("click", function(e) {
-    if (zero.textContent === "0") {
-      let zeroNode = document.createTextNode("0");
-      screen.appendChild(zeroNode);
-    } else {
-      screen.textContent = "";
+    if (screen.textContent === "") {
+      screen.textContent = "0";
+    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
+      secondOperand = "0";
+      screen.textContent = secondOperand;
     }
   });
 
@@ -131,10 +129,15 @@
   });
 
   minus.addEventListener("click", function(e) {
-    mathOperand = "-";
+    let parseFirstOperand = parseFloat(firstOperand);
+    let parseSecondOperand = parseFloat(secondOperand);
     firstOperand = screen.textContent;
-    if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-      screen.textContent = "";
+    screen.textContent = firstOperand;
+    if (secondOperand === null) {
+      screen.textContent = firstOperand;
+    } else if (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
+      screen.textContent = parseFirstOperand - parseSecondOperand;
+      firstOperand = screen.textContent; 
     }
   });
 
@@ -157,21 +160,13 @@
   plus.addEventListener('click', function(e) {
     let parseFirstOperand = parseFloat(firstOperand);
     let parseSecondOperand = parseFloat(secondOperand);
+    firstOperand = screen.textContent;
+    screen.textContent = firstOperand;
     if (secondOperand === null) {
       screen.textContent = firstOperand;
-    } else if (firstOperand && secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
+    } else if (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
       screen.textContent = parseFirstOperand + parseSecondOperand;
-    
-    
-   
-    
-    //let parseFirstOperand = parseFloat(firstOperand);
-      //let parseSecondOperand = parseFloat(secondOperand);
-   //  if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" && secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
-    // screen.textContent = firstOperand;
-   // } else {
-      // screen.textContent = firstOperand;
-  //  }
+      firstOperand = screen.textContent; 
     }
   });
 
