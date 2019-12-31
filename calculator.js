@@ -155,11 +155,12 @@
   });
 
   plus.addEventListener('click', function(e) {
+    let parseFirstOperand = parseFloat(firstOperand);
+    let parseSecondOperand = parseFloat(secondOperand);
     if (secondOperand === null) {
       screen.textContent = firstOperand;
-    } else if (firstOperand && secondOperand === !null) {
-      screen.textContent = firstOperand + secondOperand;
-    }
+    } else if (firstOperand && secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
+      screen.textContent = parseFirstOperand + parseSecondOperand;
     
     
    
@@ -171,7 +172,7 @@
    // } else {
       // screen.textContent = firstOperand;
   //  }
-  
+    }
   });
 
     equal.addEventListener("click", function(e) {
