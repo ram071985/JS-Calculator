@@ -30,12 +30,14 @@
   let newNumber = "";
 
   one.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "1";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "1";
-      screen.textContent = secondOperand;
-    } 
+    let oneNode = document.createTextNode("1");
+    let oneString = "1";
+    let replaceOneString = oneString.replace("1", "" + "1");
+  if ((firstOperand === null ) || (secondOperand === null))  {
+    screen.appendChild(oneNode);
+  } else if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") && (secondOperand === null)) {
+   screen.textContent = replaceOneString; 
+}
   });
 
   two.addEventListener("click", function(e) {
@@ -158,6 +160,7 @@
   });
 
   plus.addEventListener('click', function(e) {
+    mathOperand = screen.textContent;
     let parseFirstOperand = parseFloat(firstOperand);
     let parseSecondOperand = parseFloat(secondOperand);
     firstOperand = screen.textContent;
