@@ -29,18 +29,19 @@
   let multipleFunction = null;
   let newNumber = "";
 
+
+
   one.addEventListener("click", function(e) {
-    let oneNode = document.createTextNode("1");
-    let oneString = "1";
-    let replaceOneString = oneString.replace("1", "" + "1");
-  if ((firstOperand === null ) || (secondOperand === null))  {
-    screen.appendChild(oneNode);
-  } else if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") && (secondOperand === null)) {
-   screen.textContent = replaceOneString; 
-}
-  });
+ if (firstOperand !== null) {
+   screen.textContent = "1";
+ } else {
+  let oneNode = document.createTextNode("1");
+  screen.appendChild(oneNode);
+ }
+});
 
   two.addEventListener("click", function(e) {
+ 
     if (screen.textContent === "") {
       screen.textContent = "2";
     } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
@@ -160,14 +161,12 @@
   });
 
   plus.addEventListener('click', function(e) {
-    mathOperand = screen.textContent;
     let parseFirstOperand = parseFloat(firstOperand);
     let parseSecondOperand = parseFloat(secondOperand);
     firstOperand = screen.textContent;
-    screen.textContent = firstOperand;
     if (secondOperand === null) {
       screen.textContent = firstOperand;
-    } else if (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
+    } else if (secondOperand !== null) {
       screen.textContent = parseFirstOperand + parseSecondOperand;
       firstOperand = screen.textContent; 
     }
@@ -189,11 +188,12 @@
     });
 
 
-  clear.addEventListener("click", function(e) {
-    screen.innerHTML = "";
-    firstOperand = null;
-    secondOperand = null;
-  });
+
+clear.addEventListener("click", function(e) {
+  screen.innerHTML = "";
+  firstOperand = null;
+  secondOperand = null;
+});
 
 
 // check out firstOperand and what you can do with it once it is saved in a variable
@@ -209,6 +209,7 @@
 
 // blank screen
 //  if string.length is less than 1
+//  if string.length is less than 1   
 
 
 
