@@ -32,10 +32,10 @@
 
 
   one.addEventListener("click", function(e) {
+    let oneNode = document.createTextNode("1");
  if (firstOperand !== null) {
    screen.textContent = "1";
  } else {
-  let oneNode = document.createTextNode("1");
   screen.appendChild(oneNode);
  }
 });
