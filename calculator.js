@@ -29,97 +29,61 @@
   let multipleFunction = null;
   let newNumber = "";
 
-
+function displayNumber(number) {
+  let numberNode = document.createTextNode(number);
+  if (firstOperand !== null) {
+    screen.appendChild(numberNode);
+  } else {
+    screen.textContent = number;
+  } 
+}
 
   one.addEventListener("click", function(e) {
-    let oneNode = document.createTextNode("1");
- if (firstOperand !== null) {
-   screen.textContent = "1";
- } else {
-  screen.appendChild(oneNode);
- }
-});
+   displayNumber('1');
+   secondOperand = "1";
+  
+  });
 
   two.addEventListener("click", function(e) {
- 
-    if (screen.textContent === "") {
-      screen.textContent = "2";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "2";
-      screen.textContent = secondOperand;
-    } 
+    displayNumber('2');
+    secondOperand = "2";
   });
 
   three.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "3";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "3";
-      screen.textContent = secondOperand;
-    } 
+    displayNumber('3');
+    secondOperand = "3";
   });
 
   four.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "4";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "4";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('4');
+    secondOperand = "4";
   });
 
   five.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "5";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "5";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('5');
+    secondOperand = "5";
   });
 
   six.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "6";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "6";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('6');
+    secondOperand = "6";
   });
 
   seven.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "7";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "7";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('7');
+
   });
 
   eight.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "8";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "8";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('8');
   });
 
   nine.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "9";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "9";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('9');
   });
 
   zero.addEventListener("click", function(e) {
-    if (screen.textContent === "") {
-      screen.textContent = "0";
-    } else if (firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0") {
-      secondOperand = "0";
-      screen.textContent = secondOperand;
-    }
+    displayNumber('0');
   });
 
   decimal.addEventListener("click", function(e) {
@@ -161,6 +125,7 @@
   });
 
   plus.addEventListener('click', function(e) {
+    mathOperand = "+";
     let parseFirstOperand = parseFloat(firstOperand);
     let parseSecondOperand = parseFloat(secondOperand);
     firstOperand = screen.textContent;
@@ -170,6 +135,8 @@
       screen.textContent = parseFirstOperand + parseSecondOperand;
       firstOperand = screen.textContent; 
     }
+    console.log(firstOperand);
+console.log(secondOperand);
   });
 
     equal.addEventListener("click", function(e) {
