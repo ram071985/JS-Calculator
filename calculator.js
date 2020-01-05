@@ -1,167 +1,166 @@
+let screen = document.getElementById("js-screen");
+let one = document.getElementById("js-one");
+let two = document.getElementById("js-two");
+let three = document.getElementById("js-three");
+let four = document.getElementById("js-four");
+let five = document.getElementById("js-five");
+let six = document.getElementById("js-six");
+let seven = document.getElementById("js-seven");
+let eight = document.getElementById("js-eight");
+let nine = document.getElementById("js-nine");
+let zero = document.getElementById("js-zero");
+let divide = document.getElementById("js-divide");
+let multiply = document.getElementById("js-multiply");
+let minus = document.getElementById("js-minus");
+let plus = document.getElementById("js-plus");
+let equal = document.getElementById("js-equals");
+let clear = document.getElementById("js-ce");
+let decimal = document.getElementById("js-decimal");
+let item = document.getElementsByClassName("item");
 
-  let screen = document.getElementById("js-screen");
-  let one = document.getElementById("js-one");
-  let two = document.getElementById("js-two");
-  let three = document.getElementById("js-three");
-  let four = document.getElementById("js-four");
-  let five = document.getElementById("js-five");
-  let six = document.getElementById("js-six");
-  let seven = document.getElementById("js-seven");
-  let eight = document.getElementById("js-eight");
-  let nine = document.getElementById("js-nine");
-  let zero = document.getElementById("js-zero");
-  let divide = document.getElementById("js-divide");
-  let multiply = document.getElementById("js-multiply");
-  let minus = document.getElementById("js-minus");
-  let plus = document.getElementById("js-plus");
-  let equal = document.getElementById("js-equals");
-  let clear = document.getElementById("js-ce");
-  let decimal = document.getElementById("js-decimal");
-  let item = document.getElementsByClassName("item");
-
-  
-
-  let plusEquals = "+";
-  let minusEquals = "-";
-  let firstOperand = null;
-  let secondOperand = null;
-  let mathOperand = null;
-  let multipleFunction = null;
-  let newNumber = "";
+let plusEquals = "+";
+let minusEquals = "-";
+let firstOperand = null;
+let secondOperand = null;
+let mathOperand = null;
+let multipleFunction = null;
+let newNumber = "";
 
 function displayNumber(number) {
   let numberNode = document.createTextNode(number);
-  if (firstOperand !== null) {
+  if (firstOperand === null && secondOperand === null) {
     screen.appendChild(numberNode);
-  } else {
+  } else if (firstOperand !== null && secondOperand === null) {
+    secondOperand = screen.textContent;
     screen.textContent = number;
-  } 
+  } else if (firstOperand !== null && secondOperand !== null) {
+    screen.appendChild(numberNode);
+  } else if (parseFirstOperand + parseSecondOperand >= 0) {
+    screen.textContent = number;
+  }
 }
 
-  one.addEventListener("click", function(e) {
-   displayNumber('1');
-   secondOperand = "1";
-  
-  });
+one.addEventListener("click", function(e) {
+  displayNumber("1");
 
-  two.addEventListener("click", function(e) {
-    displayNumber('2');
-    secondOperand = "2";
-  });
+  console.log(firstOperand);
+  console.log(secondOperand);
+});
 
-  three.addEventListener("click", function(e) {
-    displayNumber('3');
-    secondOperand = "3";
-  });
+two.addEventListener("click", function(e) {
+  displayNumber("2");
+});
 
-  four.addEventListener("click", function(e) {
-    displayNumber('4');
-    secondOperand = "4";
-  });
+three.addEventListener("click", function(e) {
+  displayNumber("3");
+  secondOperand = "3";
+});
 
-  five.addEventListener("click", function(e) {
-    displayNumber('5');
-    secondOperand = "5";
-  });
+four.addEventListener("click", function(e) {
+  displayNumber("4");
+  secondOperand = "4";
+});
 
-  six.addEventListener("click", function(e) {
-    displayNumber('6');
-    secondOperand = "6";
-  });
+five.addEventListener("click", function(e) {
+  displayNumber("5");
+  secondOperand = "5";
+});
 
-  seven.addEventListener("click", function(e) {
-    displayNumber('7');
+six.addEventListener("click", function(e) {
+  displayNumber("6");
+  secondOperand = "6";
+});
 
-  });
+seven.addEventListener("click", function(e) {
+  displayNumber("7");
+});
 
-  eight.addEventListener("click", function(e) {
-    displayNumber('8');
-  });
+eight.addEventListener("click", function(e) {
+  displayNumber("8");
+});
 
-  nine.addEventListener("click", function(e) {
-    displayNumber('9');
-  });
+nine.addEventListener("click", function(e) {
+  displayNumber("9");
+});
 
-  zero.addEventListener("click", function(e) {
-    displayNumber('0');
-  });
+zero.addEventListener("click", function(e) {
+  displayNumber("0");
+});
 
-  decimal.addEventListener("click", function(e) {
-    if (decimal.textContent === ".") {
-      let zeroNode = document.createTextNode(".");
-      screen.appendChild(zeroNode);
-    } else {
-      screen.textContent = "";
-    }
-  });
+decimal.addEventListener("click", function(e) {
+  if (decimal.textContent === ".") {
+    let zeroNode = document.createTextNode(".");
+    screen.appendChild(zeroNode);
+  } else {
+    screen.textContent = "";
+  }
+});
 
-  minus.addEventListener("click", function(e) {
-    let parseFirstOperand = parseFloat(firstOperand);
-    let parseSecondOperand = parseFloat(secondOperand);
-    firstOperand = screen.textContent;
+minus.addEventListener("click", function(e) {
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  firstOperand = screen.textContent;
+  screen.textContent = firstOperand;
+  if (secondOperand === null) {
     screen.textContent = firstOperand;
-    if (secondOperand === null) {
-      screen.textContent = firstOperand;
-    } else if (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ) {
-      screen.textContent = parseFirstOperand - parseSecondOperand;
-      firstOperand = screen.textContent; 
-    }
-  });
-
-  multiply.addEventListener("click", function(e) {
-    mathOperand = "*";
+  } else if (
+    (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
+  ) {
+    screen.textContent = parseFirstOperand - parseSecondOperand;
     firstOperand = screen.textContent;
-    if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-      screen.textContent = "";
-    }
-  });
+  }
+});
 
-  divide.addEventListener("click", function(e) {
-    mathOperand = "/";
+multiply.addEventListener("click", function(e) {
+  mathOperand = "*";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
+    screen.textContent = "";
+  }
+});
+
+divide.addEventListener("click", function(e) {
+  mathOperand = "/";
+  firstOperand = screen.textContent;
+  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
+    screen.textContent = "";
+  }
+});
+
+plus.addEventListener("click", function(e) {
+  mathOperand = "+";
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  firstOperand = screen.textContent;
+  if (secondOperand === null) {
+    screen.textContent = firstOperand;
+  } else if (secondOperand !== null) {
+    screen.textContent = parseFirstOperand + parseSecondOperand;
     firstOperand = screen.textContent;
-    if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-      screen.textContent = "";
-    }
-  });
+  } 
 
-  plus.addEventListener('click', function(e) {
-    mathOperand = "+";
-    let parseFirstOperand = parseFloat(firstOperand);
-    let parseSecondOperand = parseFloat(secondOperand);
-    firstOperand = screen.textContent;
-    if (secondOperand === null) {
-      screen.textContent = firstOperand;
-    } else if (secondOperand !== null) {
-      screen.textContent = parseFirstOperand + parseSecondOperand;
-      firstOperand = screen.textContent; 
-    }
-    console.log(firstOperand);
-console.log(secondOperand);
-  });
+});
 
-    equal.addEventListener("click", function(e) {
-      secondOperand = screen.innerHTML;
-      let parseFirstOperand = parseFloat(firstOperand);
-      let parseSecondOperand = parseFloat(secondOperand);
-      if (mathOperand === "+") {
-        screen.textContent = parseFirstOperand + parseSecondOperand;
-      } else if (mathOperand === "-") {
-        screen.textContent = parseFirstOperand - parseSecondOperand;
-      } else if (mathOperand === "*") {
-        screen.textContent = parseFirstOperand * parseSecondOperand;
-      } else if (mathOperand === "/") {
-        screen.textContent = parseFirstOperand / parseSecondOperand;
-      }
-    });
-
-
+equal.addEventListener("click", function(e) {
+  secondOperand = screen.innerHTML;
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  if (mathOperand === "+") {
+    screen.textContent = parseFirstOperand + parseSecondOperand;
+  } else if (mathOperand === "-") {
+    screen.textContent = parseFirstOperand - parseSecondOperand;
+  } else if (mathOperand === "*") {
+    screen.textContent = parseFirstOperand * parseSecondOperand;
+  } else if (mathOperand === "/") {
+    screen.textContent = parseFirstOperand / parseSecondOperand;
+  }
+});
 
 clear.addEventListener("click", function(e) {
   screen.innerHTML = "";
   firstOperand = null;
   secondOperand = null;
 });
-
 
 // check out firstOperand and what you can do with it once it is saved in a variable
 // find a way to capture firstOperand globally?
@@ -170,13 +169,10 @@ clear.addEventListener("click", function(e) {
 // let multipleItem = item + plus.textContent + item + plus.textContent;
 // multipleItem = true;
 
-// if 2 return firstOperand + 
-// if secondOperand === "1", "2", 
+// if 2 return firstOperand +
+// if secondOperand === "1", "2",
 // if textContent.length is > 2 screen.textContent = "";
 
 // blank screen
 //  if string.length is less than 1
-//  if string.length is less than 1   
-
-
-
+//  if string.length is less than 1
