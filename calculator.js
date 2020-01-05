@@ -18,13 +18,12 @@ let clear = document.getElementById("js-ce");
 let decimal = document.getElementById("js-decimal");
 let item = document.getElementsByClassName("item");
 
-let plusEquals = "+";
-let minusEquals = "-";
+
 let firstOperand = null;
 let secondOperand = null;
 let mathOperand = null;
-let multipleFunction = null;
-let newNumber = "";
+
+
 
 function displayNumber(number) {
   let numberNode = document.createTextNode(number);
@@ -35,16 +34,15 @@ function displayNumber(number) {
     screen.textContent = number;
   } else if (firstOperand !== null && secondOperand !== null) {
     screen.appendChild(numberNode);
-  } else if (parseFirstOperand + parseSecondOperand >= 0) {
-    screen.textContent = number;
-  }
-}
+  } 
+  console.log(firstOperand);
+  console.log(secondOperand);
+  } 
 
 one.addEventListener("click", function(e) {
   displayNumber("1");
 
-  console.log(firstOperand);
-  console.log(secondOperand);
+  
 });
 
 two.addEventListener("click", function(e) {
@@ -136,9 +134,11 @@ plus.addEventListener("click", function(e) {
     screen.textContent = firstOperand;
   } else if (secondOperand !== null) {
     screen.textContent = parseFirstOperand + parseSecondOperand;
-    firstOperand = screen.textContent;
-  } 
+    firstOperand = parseFirstOperand + parseSecondOperand;
+  }
+    console.log(firstOperand)
 
+ 
 });
 
 equal.addEventListener("click", function(e) {
