@@ -34,9 +34,9 @@ function displayNumber(number) {
     screen.textContent = number;
   } else if (firstOperand !== null && secondOperand !== null) {
     screen.appendChild(numberNode);
-  } 
-  console.log(firstOperand);
-  console.log(secondOperand);
+  } else if (firstOperand !== null && secondOperand !== null && mathOperand === null) {
+    screen.textContent = number;
+  }
   } 
 
 one.addEventListener("click", function(e) {
@@ -135,7 +135,6 @@ plus.addEventListener("click", function(e) {
     screen.textContent = parseFirstOperand + parseSecondOperand;
     firstOperand = parseFirstOperand + parseSecondOperand;
   }
-    console.log(firstOperand)
 
  
 });
