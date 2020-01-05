@@ -30,7 +30,7 @@ function displayNumber(number) {
   if (firstOperand === null && secondOperand === null) {
     screen.appendChild(numberNode);
   } else if (firstOperand !== null && secondOperand === null) {
-    secondOperand = screen.textContent;
+    secondOperand = number;
     screen.textContent = number;
   } else if (firstOperand !== null && secondOperand !== null) {
     screen.appendChild(numberNode);
@@ -41,7 +41,6 @@ function displayNumber(number) {
 
 one.addEventListener("click", function(e) {
   displayNumber("1");
-
   
 });
 
@@ -51,22 +50,22 @@ two.addEventListener("click", function(e) {
 
 three.addEventListener("click", function(e) {
   displayNumber("3");
-  secondOperand = "3";
+
 });
 
 four.addEventListener("click", function(e) {
   displayNumber("4");
-  secondOperand = "4";
+  
 });
 
 five.addEventListener("click", function(e) {
   displayNumber("5");
-  secondOperand = "5";
+  
 });
 
 six.addEventListener("click", function(e) {
   displayNumber("6");
-  secondOperand = "6";
+  
 });
 
 seven.addEventListener("click", function(e) {
