@@ -32,12 +32,13 @@ function displayNumber(number) {
   } else if (firstOperand !== null && secondOperand === null) {
     secondOperand = number;
     screen.textContent = number;
+  } else if (firstOperand !== null && secondOperand !== null && mathOperand === "+") {
+    secondOperand = number;
+    screen.textContent = number;
   } else if (firstOperand !== null && secondOperand !== null) {
     screen.appendChild(numberNode);
-  } else if (firstOperand !== null && secondOperand !== null && mathOperand === null) {
-    screen.textContent = number;
-  }
   } 
+}
 
 one.addEventListener("click", function(e) {
   displayNumber("1");
@@ -135,6 +136,7 @@ plus.addEventListener("click", function(e) {
     screen.textContent = parseFirstOperand + parseSecondOperand;
     firstOperand = parseFirstOperand + parseSecondOperand;
   }
+    console.log(firstOperand)
 
  
 });
