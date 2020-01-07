@@ -25,13 +25,15 @@ let mathOperand = null;
 function displayNumber(number) {
   let numberNode = document.createTextNode(number);
   if (mathOperand === null) {
-    firstOperand = number;
+    firstOperand = numberNode;
     if (firstOperand === null) {
       firstOperand = number;
     } else {
-      firstOperand = screen.appendChild(numberNode);
+      screen.appendChild(numberNode);
+      firstOperand = screen.textContent;
     }
-  } 
+  }
+   
   console.log(firstOperand);
   console.log(secondOperand);
   console.log(mathOperand);
@@ -118,15 +120,15 @@ divide.addEventListener("click", function(e) {
 
 plus.addEventListener("click", function(e) {
   mathOperand = "+";
-  let parseFirstOperand = parseFloat(firstOperand);
-  let parseSecondOperand = parseFloat(secondOperand);
-  firstOperand = screen.textContent;
-  if (secondOperand === null) {
+ // let parseFirstOperand = parseFloat(firstOperand);
+ // let parseSecondOperand = parseFloat(secondOperand);
+//  firstOperand = screen.textContent;
+ // if (secondOperand === null) {
    
-  } else if (secondOperand !== null) {
-    screen.textContent = parseFirstOperand + parseSecondOperand;
-    firstOperand = parseFirstOperand + parseSecondOperand;
-  }
+  //} else if (secondOperand !== null) {
+   // screen.textContent = parseFirstOperand + parseSecondOperand;
+  //  firstOperand = parseFirstOperand + parseSecondOperand;
+ // }
    console.log(firstOperand);
   console.log(secondOperand);
   console.log(mathOperand);
