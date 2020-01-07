@@ -31,12 +31,21 @@ function displayNumber(number) {
     } else {
       screen.appendChild(numberNode);
       firstOperand = screen.textContent;
-    }
+    }  
+  } else if (mathOperand !== null) {
+   secondOperand = number;
+   screen.textContent = secondOperand;
+   if (secondOperand === null) {
+     secondOperand = numberNode;
+   } else {
+    screen.appendChild(numberNode);
+     secondOperand = screen.textContent;
+   }
   }
    
   console.log(firstOperand);
   console.log(secondOperand);
-  console.log(mathOperand);
+ console.log(mathOperand);
 }
 
 one.addEventListener("click", function(e) {
@@ -129,9 +138,9 @@ plus.addEventListener("click", function(e) {
    // screen.textContent = parseFirstOperand + parseSecondOperand;
   //  firstOperand = parseFirstOperand + parseSecondOperand;
  // }
-   console.log(firstOperand);
-  console.log(secondOperand);
-  console.log(mathOperand);
+ //  console.log(firstOperand);
+ // console.log(secondOperand);
+ // console.log(mathOperand);
 });
 
 equal.addEventListener("click", function(e) {
