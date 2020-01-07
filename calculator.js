@@ -22,30 +22,33 @@ let firstOperand = null;
 let secondOperand = null;
 let mathOperand = null;
 
-function displayNumber(number) {
-  let numberNode = document.createTextNode(number);
-  if (mathOperand === null) {
-    firstOperand = numberNode;
-    if (firstOperand === null) {
-      firstOperand = number;
-    } else {
-      screen.appendChild(numberNode);
-      firstOperand = screen.textContent;
-    }  
-  } else if (mathOperand !== null) {
-   secondOperand = number;
-   screen.textContent = secondOperand;
-   if (secondOperand === null) {
-     secondOperand = numberNode;
-   } else {
-    screen.appendChild(numberNode);
-     secondOperand = screen.textContent;
-   }
+function setFirstOperand(number) {
+  if (firstOperand === null) {
+    firstOperand = number;
+  } else {
+    firstOperand += number;
   }
-   
+  screen.textContent = firstOperand;
+}
+
+function setSecondOperand(number) {
+  if (secondOperand === null) {
+    secondOperand = number;
+  } else {
+    secondOperand += number;
+  }
+  screen.textContent = secondOperand;
+}
+
+function displayNumber(number) {
+  if (mathOperand === null) {
+    setFirstOperand(number);
+  } else if (mathOperand !== null) {
+    setSecondOperand(number);
+  }
   console.log(firstOperand);
-  console.log(secondOperand);
- console.log(mathOperand);
+console.log(secondOperand);
+   console.log(mathOperand);
 }
 
 one.addEventListener("click", function(e) {
@@ -129,18 +132,25 @@ divide.addEventListener("click", function(e) {
 
 plus.addEventListener("click", function(e) {
   mathOperand = "+";
- // let parseFirstOperand = parseFloat(firstOperand);
- // let parseSecondOperand = parseFloat(secondOperand);
-//  firstOperand = screen.textContent;
- // if (secondOperand === null) {
-   
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+ if (secondOperand === null) {
+  screen.textContent = firstOperand;
+ } else {
+  screen.textContent = parseFirstOperand + parseSecondOperand;
+ }
+ firstOperand = screen.textContent;
+  //  firstOperand = screen.textContent;
+  // if (secondOperand === null) {
+
   //} else if (secondOperand !== null) {
-   // screen.textContent = parseFirstOperand + parseSecondOperand;
+  // screen.textContent = parseFirstOperand + parseSecondOperand;
   //  firstOperand = parseFirstOperand + parseSecondOperand;
- // }
- //  console.log(firstOperand);
- // console.log(secondOperand);
- // console.log(mathOperand);
+  // }
+ console.log(firstOperand);
+console.log(secondOperand);
+   console.log(mathOperand);
+
 });
 
 equal.addEventListener("click", function(e) {
