@@ -18,31 +18,27 @@ let clear = document.getElementById("js-ce");
 let decimal = document.getElementById("js-decimal");
 let item = document.getElementsByClassName("item");
 
-
 let firstOperand = null;
 let secondOperand = null;
 let mathOperand = null;
 
-
-
 function displayNumber(number) {
   let numberNode = document.createTextNode(number);
-  if (firstOperand === null && secondOperand === null) {
-    screen.appendChild(numberNode);
-  } else if (firstOperand !== null && secondOperand === null) {
-    secondOperand = number;
-    screen.textContent = number;
-  } else if (firstOperand !== null && secondOperand !== null && mathOperand === "+") {
-    secondOperand = number;
-    screen.textContent = number;
-  } else if (firstOperand !== null && secondOperand !== null) {
-    screen.appendChild(numberNode);
+  if (mathOperand === null) {
+    firstOperand = number;
+    if (firstOperand === null) {
+      firstOperand = number;
+    } else {
+      firstOperand = screen.appendChild(numberNode);
+    }
   } 
+  console.log(firstOperand);
+  console.log(secondOperand);
+  console.log(mathOperand);
 }
 
 one.addEventListener("click", function(e) {
   displayNumber("1");
-  
 });
 
 two.addEventListener("click", function(e) {
@@ -51,22 +47,18 @@ two.addEventListener("click", function(e) {
 
 three.addEventListener("click", function(e) {
   displayNumber("3");
-
 });
 
 four.addEventListener("click", function(e) {
   displayNumber("4");
-  
 });
 
 five.addEventListener("click", function(e) {
   displayNumber("5");
-  
 });
 
 six.addEventListener("click", function(e) {
   displayNumber("6");
-  
 });
 
 seven.addEventListener("click", function(e) {
@@ -97,7 +89,6 @@ decimal.addEventListener("click", function(e) {
 minus.addEventListener("click", function(e) {
   let parseFirstOperand = parseFloat(firstOperand);
   let parseSecondOperand = parseFloat(secondOperand);
-  firstOperand = screen.textContent;
   screen.textContent = firstOperand;
   if (secondOperand === null) {
     screen.textContent = firstOperand;
@@ -131,14 +122,14 @@ plus.addEventListener("click", function(e) {
   let parseSecondOperand = parseFloat(secondOperand);
   firstOperand = screen.textContent;
   if (secondOperand === null) {
-    screen.textContent = firstOperand;
+   
   } else if (secondOperand !== null) {
     screen.textContent = parseFirstOperand + parseSecondOperand;
     firstOperand = parseFirstOperand + parseSecondOperand;
   }
-    console.log(firstOperand)
-
- 
+   console.log(firstOperand);
+  console.log(secondOperand);
+  console.log(mathOperand);
 });
 
 equal.addEventListener("click", function(e) {
