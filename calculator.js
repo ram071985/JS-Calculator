@@ -35,8 +35,10 @@ function setSecondOperand(number) {
   if (secondOperand === null) {
     secondOperand = number;
   } else {
+    debugger;
     secondOperand += number;
   }
+
   screen.textContent = secondOperand;
 }
 
@@ -44,6 +46,7 @@ function displayNumber(number) {
   if (mathOperand === null) {
     setFirstOperand(number);
   } else if (mathOperand !== null) {
+    debugger;
     setSecondOperand(number);
   }
   console.log(firstOperand);
@@ -138,8 +141,11 @@ plus.addEventListener("click", function(e) {
   screen.textContent = firstOperand;
  } else {
   screen.textContent = parseFirstOperand + parseSecondOperand;
+  firstOperand = screen.textContent;
+  secondOperand = null;
  }
- firstOperand = screen.textContent;
+
+
   //  firstOperand = screen.textContent;
   // if (secondOperand === null) {
 
