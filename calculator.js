@@ -51,9 +51,6 @@ function displayNumber(number) {
     debugger;
     setSecondOperand(number);
   }
-  console.log(firstOperand);
-console.log(secondOperand);
-   console.log(mathOperand);
 }
 
 one.addEventListener("click", function(e) {
@@ -97,41 +94,45 @@ zero.addEventListener("click", function(e) {
 });
 
 decimal.addEventListener("click", function(e) {
-  if (decimal.textContent === ".") {
-    let zeroNode = document.createTextNode(".");
-    screen.appendChild(zeroNode);
-  } else {
-    screen.textContent = "";
-  }
+  displayNumber(".");
 });
 
 minus.addEventListener("click", function(e) {
+  mathOperand = "-";
   let parseFirstOperand = parseFloat(firstOperand);
   let parseSecondOperand = parseFloat(secondOperand);
-  screen.textContent = firstOperand;
   if (secondOperand === null) {
     screen.textContent = firstOperand;
-  } else if (
-    (secondOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
-  ) {
+  } else {
     screen.textContent = parseFirstOperand - parseSecondOperand;
     firstOperand = screen.textContent;
+    secondOperand = null;
   }
 });
 
 multiply.addEventListener("click", function(e) {
   mathOperand = "*";
-  firstOperand = screen.textContent;
-  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-    screen.textContent = "";
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  if (secondOperand === null) {
+    screen.textContent = firstOperand;
+  } else {
+    screen.textContent = parseFirstOperand * parseSecondOperand;
+    firstOperand = screen.textContent;
+    secondOperand = null;
   }
 });
 
 divide.addEventListener("click", function(e) {
   mathOperand = "/";
-  firstOperand = screen.textContent;
-  if ((firstOperand === "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-    screen.textContent = "";
+  let parseFirstOperand = parseFloat(firstOperand);
+  let parseSecondOperand = parseFloat(secondOperand);
+  if (secondOperand === null) {
+    screen.textContent = firstOperand;
+  } else {
+    screen.textContent = parseFirstOperand / parseSecondOperand;
+    firstOperand = screen.textContent;
+    secondOperand = null;
   }
 });
 
@@ -139,26 +140,13 @@ plus.addEventListener("click", function(e) {
   mathOperand = "+";
   let parseFirstOperand = parseFloat(firstOperand);
   let parseSecondOperand = parseFloat(secondOperand);
- if (secondOperand === null) {
-  screen.textContent = firstOperand;
- } else {
-  screen.textContent = parseFirstOperand + parseSecondOperand;
-  firstOperand = screen.textContent;
-  secondOperand = null;
- }
-
-
-  //  firstOperand = screen.textContent;
-  // if (secondOperand === null) {
-
-  //} else if (secondOperand !== null) {
-  // screen.textContent = parseFirstOperand + parseSecondOperand;
-  //  firstOperand = parseFirstOperand + parseSecondOperand;
-  // }
- console.log(firstOperand);
-console.log(secondOperand);
-   console.log(mathOperand);
-
+  if (secondOperand === null) {
+    screen.textContent = firstOperand;
+  } else {
+    screen.textContent = parseFirstOperand + parseSecondOperand;
+    firstOperand = screen.textContent;
+    secondOperand = null;
+  }
 });
 
 equal.addEventListener("click", function(e) {
@@ -182,18 +170,3 @@ clear.addEventListener("click", function(e) {
   mathOperand = null;
   screen.textContent = "0";
 });
-
-// check out firstOperand and what you can do with it once it is saved in a variable
-// find a way to capture firstOperand globally?
-// make function for multiple functions?
-
-// let multipleItem = item + plus.textContent + item + plus.textContent;
-// multipleItem = true;
-
-// if 2 return firstOperand +
-// if secondOperand === "1", "2",
-// if textContent.length is > 2 screen.textContent = "";
-
-// blank screen
-//  if string.length is less than 1
-//  if string.length is less than 1
