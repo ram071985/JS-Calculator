@@ -22,6 +22,8 @@ let firstOperand = null;
 let secondOperand = null;
 let mathOperand = null;
 
+screen.textContent = "0";
+
 function setFirstOperand(number) {
   if (firstOperand === null) {
     firstOperand = number;
@@ -175,9 +177,10 @@ equal.addEventListener("click", function(e) {
 });
 
 clear.addEventListener("click", function(e) {
-  screen.innerHTML = "";
   firstOperand = null;
   secondOperand = null;
+  mathOperand = null;
+  screen.textContent = "0";
 });
 
 // check out firstOperand and what you can do with it once it is saved in a variable
